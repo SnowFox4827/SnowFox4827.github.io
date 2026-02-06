@@ -2,6 +2,9 @@ import json
 from pathlib import Path
 
 def to_json(soup):
+    #downloads_path = Path.home() / "Downloads"
+    #file_name = "output.txt"
+    #file_path = downloads_path / file_name
     data = {}
     sections = soup.find_all(['section'])
 
@@ -14,7 +17,7 @@ def to_json(soup):
     
         data[section_name] = content
     
-    #with open("output.json", "w", encoding="utf-8") as f:
+    #with open(file_path, "w", encoding="utf-8") as f:
         #json.dump(data, f, indent=4, ensure_ascii=False)
 
     print("Soup Converted to json")
