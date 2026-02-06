@@ -1,5 +1,5 @@
 import json
-from bs4 import BeautifulSoup
+from pathlib import Path
 
 def to_json(soup):
     data = {}
@@ -14,14 +14,19 @@ def to_json(soup):
     
         data[section_name] = content
     
-    with open("output.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+    #with open("output.json", "w", encoding="utf-8") as f:
+        #json.dump(data, f, indent=4, ensure_ascii=False)
 
-    #print("Soup Converted to json")
+    print("Soup Converted to json")
     return data
 
 def to_txt(json_data):
     # Save raw JSON string
-    with open("output.txt", "w", encoding="utf-8") as f:
+    downloads_path = Path.home() / "Downloads"
+    file_name = "output.txt"
+    file_path = downloads_path / file_name
+
+    with open(file_path, "w", encoding="utf-8") as f:
         json.dump(json_data, f)
-    print("JSON saved as raw TXT successfully!")
+
+    print(f"JSON saved as raw TXT successfully to {file_path} !")
