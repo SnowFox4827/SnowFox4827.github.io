@@ -4,7 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dalton Plocek - Portfolio</title>
+<title>Dalton Plocek — Data Analyst &amp; Portfolio</title>
+<meta name="description" content="Dalton Plocek — data analyst specializing in SQL, Python, and Power BI, with a background in campus ministry leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
 <script defer src="./script.js"></script>
 </head>
@@ -17,8 +21,23 @@
 
 <div class="profile_name">
 Dalton Plocek
-<div class="contact_info"></div>
+<div class="contact_info">
+<!-- Update these hrefs with your real contact links -->
+<a href="mailto:you@example.com" aria-label="Email">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></svg>
+</a>
+<a href="#" aria-label="LinkedIn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 0 1 5 0V17M12 10v7"/></svg>
+</a>
+<a href="#" aria-label="GitHub">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.6 2.8 5.5 3.1 5.5 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+</a>
 </div>
+</div>
+
+<button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+</button>
 
 <div class="topdiv">
 <a class="topmenu" href="#about-me">About Me</a>
@@ -35,119 +54,123 @@ Dalton Plocek
 
 
 <!-- About -->
-<section id="about-me" class="container">
+<section id="about-me">
+<div class="section-inner" style="display:flex; gap: 2.5rem; align-items:center; flex-wrap: wrap;">
 
-<div>
-<img src="site-images/icons8-hiking-96.png" class="profile_image">
+<div class="profile_image_wrap">
+<img src="site-images/icons8-hiking-96.png" class="profile_image" alt="Hiking icon">
 </div>
 
-<div>
+<div style="flex: 1; min-width: 280px;">
 <h1>Welcome to my site.</h1>
 
 <p>
 Analytical and solutions-driven data professional with experience designing, automating, and supporting data-driven applications on the Microsoft stack. Skilled in SQL, Python, Power BI, and Azure DevOps, with hands-on experience building ETL pipelines, developing scalable reporting solutions, and working in Agile/Scrum environments.
+</p>
+<p>
 Alongside my technical career, I have been deeply involved in campus ministry through leadership roles with Cru and RUF. These experiences strengthened my ability to lead teams, communicate effectively, and invest in others through mentorship, teaching, and event coordination. Whether leading Bible studies, organizing outreach efforts, or serving on an international mission trip, I have developed a strong foundation in servant leadership, adaptability, and relationship-building.
+</p>
+<p>
 I bring a unique combination of technical expertise, business understanding, and people-centered leadership. I am passionate about continuous learning, using my skills to serve others well, and creating meaningful, lasting impact in both professional and personal settings.
 </p>
 </div>
 
+</div>
 </section>
 
 
 <!-- Skills -->
 <section id="skills">
+<div class="section-inner">
 <h2>Skills</h2>
 
+<div class="skills-group">
+<h3>Technical</h3>
 <div class="all_skills">
 
 <div class="skill">
-<img src="site-images/html5.png">
-<h6>HTML</h6>
-<p>1+ years experience</p>
+<img src="site-images/icons8-python-48.png" alt="">
+<div class="skill-text"><h6>Python</h6><p>3 years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/js.jpeg">
-<h6>JavaScript</h6>
-<p>1+ years experience</p>
+<img src="site-images/icons8-sql-48.png" alt="">
+<div class="skill-text"><h6>SQL</h6><p>3 years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-python-48.png">
-<h6>Python</h6>
-<p>3 years experience</p>
+<img src="site-images/java.png" alt="">
+<div class="skill-text"><h6>Java</h6><p>2 years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-sql-48.png">
-<h6>SQL</h6>
-<p>3 years experience</p>
+<img src="site-images/icons8-azure-devops-48.png" alt="">
+<div class="skill-text"><h6>Azure DevOps</h6><p>1 year</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-azure-devops-48.png">
-<h6>Azure DevOps</h6>
-<p>1 year experience</p>
+<img src="site-images/icons8-git-48.png" alt="">
+<div class="skill-text"><h6>Git</h6><p>1 year</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-microsoft-office-50.png">
-<h6>Microsoft Office Suite</h6>
-<p>5+ years experience</p>
+<img src="site-images/html5.png" alt="">
+<div class="skill-text"><h6>HTML</h6><p>1+ years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-git-48.png">
-<h6>Git</h6>
-<p>1 year experience</p>
+<img src="site-images/js.jpeg" alt="">
+<div class="skill-text"><h6>JavaScript</h6><p>1+ years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/java.png">
-<h6>Java</h6>
-<p>2 years experience</p>
+<img src="site-images/icons8-microsoft-office-50.png" alt="">
+<div class="skill-text"><h6>Microsoft Office</h6><p>5+ years</p></div>
+</div>
+
+</div>
+</div>
+
+<div class="skills-group">
+<h3>Beyond the Desk</h3>
+<div class="all_skills">
+
+<div class="skill">
+<img src="site-images/icons8-camping-96.png" alt="">
+<div class="skill-text"><h6>Camping</h6><p>10+ years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-chisel-64.png">
-<h6>Woodworking</h6>
-<p>2 years experience</p>
+<img src="site-images/icons8-cooking-64.png" alt="">
+<div class="skill-text"><h6>Cooking</h6><p>10+ years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-yeast-64.png">
-<h6>Sourdough Baking</h6>
-<p>2 years experience</p>
+<img src="site-images/icons8-reading-an-open-book-94.png" alt="">
+<div class="skill-text"><h6>Reading</h6><p>10+ years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-camping-96.png">
-<h6>Camping</h6>
-<p>10+ years experience</p>
+<img src="site-images/icons8-fishing-64.png" alt="">
+<div class="skill-text"><h6>Fishing</h6><p>5+ years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-fishing-64.png">
-<h6>Fishing</h6>
-<p>5+ years experience</p>
+<img src="site-images/icons8-barbed-wire-96.png" alt="">
+<div class="skill-text"><h6>Fence Building</h6><p>4 years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-cooking-64.png">
-<h6>Cooking</h6>
-<p>10+ years experience</p>
+<img src="site-images/icons8-chisel-64.png" alt="">
+<div class="skill-text"><h6>Woodworking</h6><p>2 years</p></div>
 </div>
 
 <div class="skill">
-<img src="site-images/icons8-reading-an-open-book-94.png">
-<h6>Reading</h6>
-<p>10+ years experience</p>
+<img src="site-images/icons8-yeast-64.png" alt="">
+<div class="skill-text"><h6>Sourdough Baking</h6><p>2 years</p></div>
 </div>
 
-<div class="skill">
-<img src="site-images/icons8-barbed-wire-96.png">
-<h6>Fence Building</h6>
-<p>4 years experience</p>
+</div>
 </div>
 
 </div>
@@ -155,11 +178,11 @@ I bring a unique combination of technical expertise, business understanding, and
 
 
 <!-- Projects -->
-<section id="projects" class="projects">
-
+<section id="projects">
+<div class="section-inner">
 <h2>Projects</h2>
 
-<div class="projects-container">
+<div class="card-grid">
 
 <div class="project-card">
 <h3>Kanban Board</h3>
@@ -180,12 +203,12 @@ I bring a unique combination of technical expertise, business understanding, and
 <div class="project-card">
 <h3>Vehicle Management App</h3>
 <ul>
-<li>Built a web application using flask for both frontend and backend.</li>
+<li>Built a web application using Flask for both frontend and backend.</li>
 <li>Manages vehicles, mileage logging, and maintenance logging.</li>
-<li>Containerized using Docker</li>
+<li>Containerized using Docker.</li>
 </ul>
 </div>
-  
+
 <div class="project-card">
 <h3>Budget Web Application</h3>
 <ul>
@@ -217,57 +240,57 @@ I bring a unique combination of technical expertise, business understanding, and
 </div>
 
 </div>
+</div>
 </section>
 
 
 <!-- Education -->
-<section id="education" class="education">
-
+<section id="education">
+<div class="section-inner">
 <h2>Education</h2>
 
-<div class="education-container">
+<div class="card-grid">
 
 <div class="education-card">
-<h3>Midwestern Baptist Theological Seminary — Kansas City, MO</h3>
-<h4>For the Church Institute | January 2025 – Present</h4>
+<h3>Midwestern Baptist Theological Seminary</h3>
+<h4>For the Church Institute · Kansas City, MO · Jan 2025 – Present</h4>
 <ul>
-<li>Old Testament 1 & 2</li>
-<li>New Testament 1 & 2</li>
+<li>Old Testament 1 &amp; 2</li>
+<li>New Testament 1 &amp; 2</li>
 <li>Church Doctrine 1</li>
 </ul>
 </div>
 
 <div class="education-card">
-<h3>Texas Tech University — Lubbock, TX</h3>
-<h4>Bachelor of Business Administration | August 2018 – December 2023</h4>
+<h3>Texas Tech University</h3>
+<h4>B.B.A. · Lubbock, TX · Aug 2018 – Dec 2023</h4>
 <ul>
 <li>Accounting</li>
 <li>Management</li>
-<li>Certificates in Information Technology & Data Analytics</li>
+<li>Certificates in Information Technology &amp; Data Analytics</li>
 </ul>
 </div>
 
 <div class="education-card">
-<h3>Morton Ranch High School — Katy, TX</h3>
-<h4>Class of 2018</h4>
+<h3>Morton Ranch High School</h3>
+<h4>Katy, TX · Class of 2018</h4>
 </div>
 
+</div>
 </div>
 </section>
 
 
 <!-- Work Experience -->
-<section id="work-experience" class="work-experience">
-
+<section id="work-experience">
+<div class="section-inner">
 <h2>Work Experience</h2>
 
-<div class="work-experience-container">
+<div class="trail">
 
-<div class="work-experience-card">
-
-<h3>Texas Tech University — Operations, Capital Projects & Administration</h3>
-<h4>Reporting Analyst | Lubbock, TX | January 2024 – Present</h4>
-
+<div class="trail-entry">
+<h3>Reporting Analyst</h3>
+<h4>Texas Tech University — Operations, Capital Projects &amp; Administration · Lubbock, TX · Jan 2024 – Present</h4>
 <ul>
 <li>Designed and maintained 200+ Power BI reports used by university stakeholders.</li>
 <li>Built ETL pipelines for ingestion and transformation of SQL Server data.</li>
@@ -276,88 +299,101 @@ I bring a unique combination of technical expertise, business understanding, and
 <li>Collaborated with cross-functional teams to resolve technical issues.</li>
 <li>Worked in Agile/Scrum development cycles.</li>
 </ul>
-
 </div>
 
-
-<div class="work-experience-card">
-
-<h3>Lone Star State Bank of West Texas</h3>
-<h4>Banking Intern | Lubbock, TX | September 2022 – November 2022</h4>
-
+<div class="trail-entry">
+<h3>Banking Intern</h3>
+<h4>Lone Star State Bank of West Texas · Lubbock, TX · Sept 2022 – Nov 2022</h4>
 <ul>
 <li>Worked alongside lenders to understand the loan approval process.</li>
 <li>Assisted underwriting agricultural, energy, and personal loans.</li>
 <li>Accompanied credit analysts on project inspections.</li>
 <li>Analyzed checks for compliance and potential fraud.</li>
 </ul>
-
 </div>
 
+</div>
 </div>
 </section>
 
 
 <!-- Ministry Experience -->
-<section id="ministry-experience" class="ministry-experience">
-
+<section id="ministry-experience">
+<div class="section-inner">
 <h2>Ministry Experience</h2>
 
-<div class="ministry-experience-container">
+<div class="trail-group">
+<h3 class="trail-org">RUF (Reformed University Fellowship)</h3>
+<div class="trail">
 
-<div class="ministry-experience-card">
-
-<h3>RUF (Reformed University Fellowship)</h3>
-
-<h4>Event Coordinator — Texas Tech University | Dec 2022 – Aug 2023</h4>
+<div class="trail-entry">
+<h3>Event Coordinator</h3>
+<h4>Texas Tech University · Dec 2022 – Aug 2023</h4>
 <ul>
 <li>Assisted the college minister in securing weekly meeting space.</li>
 <li>Met weekly to improve student outreach strategies.</li>
 <li>Planned annual training events.</li>
 <li>Helped register RUF as an official student organization.</li>
 </ul>
+</div>
 
-<h4>Bible Study Leader — Texas Tech University | Jan 2023 – May 2023</h4>
+<div class="trail-entry">
+<h3>Bible Study Leader</h3>
+<h4>Texas Tech University · Jan 2023 – May 2023</h4>
 <ul>
 <li>Led weekly Bible studies for a co-ed student group.</li>
 <li>Followed curriculum and guided discussions.</li>
 <li>Developed leadership and listening skills.</li>
 </ul>
-
 </div>
 
+</div>
+</div>
 
-<div class="ministry-experience-card">
+<div class="trail-group">
+<h3 class="trail-org">Cru (Campus Crusade for Christ)</h3>
+<div class="trail">
 
-<h3>Cru (Campus Crusade for Christ)</h3>
-
-<h4>Mission Trip — Rijeka, Croatia | May 2021 – July 2021</h4>
+<div class="trail-entry">
+<h3>Mission Trip</h3>
+<h4>Rijeka, Croatia · May 2021 – Jul 2021</h4>
 <ul>
 <li>Shared the Gospel with students at the University of Rijeka.</li>
 <li>Connected students with local churches.</li>
 <li>Adapted to fast-paced ministry environments.</li>
 <li>Raised ~$8,000 through donor support.</li>
 </ul>
+</div>
 
-<h4>President — Texas Tech University | Aug 2020 – May 2021</h4>
+<div class="trail-entry">
+<h3>President</h3>
+<h4>Texas Tech University · Aug 2020 – May 2021</h4>
 <ul>
 <li>Led weekly meetings and Bible lessons.</li>
 <li>Represented Cru in university leadership trainings.</li>
 <li>Helped register Cru as an official student organization.</li>
 </ul>
+</div>
 
-<h4>Treasurer — Texas Tech University | Aug 2019 – May 2020</h4>
+<div class="trail-entry">
+<h3>Treasurer</h3>
+<h4>Texas Tech University · Aug 2019 – May 2020</h4>
 <ul>
 <li>Managed financial records for the fiscal year.</li>
 <li>Represented Cru in administrative trainings.</li>
 </ul>
+</div>
 
-<h4>Bible Study Leader — Texas Tech University | Aug 2019 – May 2021</h4>
+<div class="trail-entry">
+<h3>Bible Study Leader</h3>
+<h4>Texas Tech University · Aug 2019 – May 2021</h4>
 <ul>
 <li>Led weekly studies for a group of 10 men.</li>
 <li>Developed study material and curriculum.</li>
 </ul>
+</div>
 
+</div>
 </div>
 
 </div>
@@ -365,90 +401,103 @@ I bring a unique combination of technical expertise, business understanding, and
 
 
 <!-- Professional Development -->
-<section id="professional-development" class="professional-development">
-
+<section id="professional-development">
+<div class="section-inner">
 <h2>Professional Development</h2>
 
-<div class="professional-development-container">
-
-<div class="professional-development-card">
-
-<h3>Intuit</h3>
-
-<h4>Bookkeeping | April 2026 – Present</h4>
+<div class="trail-group">
+<h3 class="trail-org">Intuit</h3>
+<div class="trail">
+<div class="trail-entry">
+<h3>Bookkeeping</h3>
+<h4>Apr 2026 – Present</h4>
 <ul>
-<li>Developed foundational knowledge of bookkeeping, including managing financial records, tracking income and expenses, and preparing financial statements</li>
-<li>Gained hands-on experience with accounting tools such as QuickBooks, including payroll basics and ledger maintenance for small to mid-sized businesses</li>
-<li>Applied key accounting concepts, including balance sheets, income statements, account reconciliation, and financial reporting</li>
-<li>Interpreted financial data to support business decision-making and ensure accurate financial management</li>
+<li>Developed foundational knowledge of bookkeeping, including managing financial records, tracking income and expenses, and preparing financial statements.</li>
+<li>Gained hands-on experience with accounting tools such as QuickBooks, including payroll basics and ledger maintenance for small to mid-sized businesses.</li>
+<li>Applied key accounting concepts, including balance sheets, income statements, account reconciliation, and financial reporting.</li>
+<li>Interpreted financial data to support business decision-making and ensure accurate financial management.</li>
 </ul>
+</div>
+</div>
+</div>
 
-<h3>NASM (National Academy of Sports Medicine)</h3>
-
-<h4>Personal Fitness Trainer | April 2026 – June 2026</h4>
+<div class="trail-group">
+<h3 class="trail-org">NASM (National Academy of Sports Medicine)</h3>
+<div class="trail">
+<div class="trail-entry">
+<h3>Personal Fitness Trainer</h3>
+<h4>Apr 2026 – Jun 2026</h4>
 <ul>
-<li>Applied foundational knowledge of exercise science, kinesiology, and human physiology to design effective fitness programs</li>
-<li>Developed personalized training plans incorporating goal setting, SMART goals, and health assessments for diverse clients</li>
-<li>Implemented safe exercise techniques, including CPR and AED awareness, with program modifications for injury prevention and rehabilitation</li>
-<li>Utilized coaching, nutrition guidance, and wellness strategies to support overall health, performance, and client success</li>
-<li>Gained CPR and AED knowledge for resessitating Adults and Children</li>
-<li>Completed course on Coursera but did not take exam</li>
+<li>Applied foundational knowledge of exercise science, kinesiology, and human physiology to design effective fitness programs.</li>
+<li>Developed personalized training plans incorporating goal setting, SMART goals, and health assessments for diverse clients.</li>
+<li>Implemented safe exercise techniques, including CPR and AED awareness, with program modifications for injury prevention and rehabilitation.</li>
+<li>Utilized coaching, nutrition guidance, and wellness strategies to support overall health, performance, and client success.</li>
+<li>Gained CPR and AED knowledge for resuscitating adults and children.</li>
+<li>Completed course on Coursera; exam not yet taken.</li>
 </ul>
+</div>
+</div>
+</div>
 
-<h3>IBM</h3>
+<div class="trail-group">
+<h3 class="trail-org">IBM</h3>
+<div class="trail">
 
-<h4>Full-Stack JavaScript Developer | Jan 2026 – April 2026</h4>
+<div class="trail-entry">
+<h3>Full-Stack JavaScript Developer</h3>
+<h4>Jan 2026 – Apr 2026</h4>
 <ul>
 <li>Developing front-end applications using HTML, CSS, JavaScript, and React.</li>
 <li>Building cloud-native backend services using Node.js.</li>
 <li>Learning microservices, containers, and serverless architecture.</li>
 <li>Practicing DevOps and CI/CD workflows.</li>
 </ul>
+</div>
 
-<h4>DevOps and Software Engineering | Sept 2025 – April 2026</h4>
+<div class="trail-entry">
+<h3>DevOps and Software Engineering</h3>
+<h4>Sept 2025 – Apr 2026</h4>
 <ul>
 <li>Practicing Agile and Scrum development workflows.</li>
 <li>Building Python applications with REST APIs and Flask.</li>
 <li>Learning Docker, Kubernetes, and OpenShift.</li>
 <li>Implementing CI/CD pipelines.</li>
 </ul>
-  
-<h4>Data Engineering | Oct 2024 – Apr 2025</h4>
+</div>
+
+<div class="trail-entry">
+<h3>Data Engineering</h3>
+<h4>Oct 2024 – Apr 2025</h4>
 <ul>
 <li>Worked with MySQL, PostgreSQL, and IBM Db2.</li>
 <li>Processed big data using MongoDB, Cassandra, and Cloudant.</li>
 <li>Used Hadoop and Apache Spark.</li>
 <li>Built ETL pipelines with Python, Bash, Airflow, and Kafka.</li>
 </ul>
+</div>
 
+</div>
 </div>
 
 </div>
 </section>
 
+<footer>
+Designed &amp; built by Dalton Plocek
+</footer>
 
 <!-- Back to Top -->
-<div class="iconbutton">
-
-<a href="#home">
-
+<a href="#home" class="iconbutton" aria-label="Back to top">
 <svg xmlns="http://www.w3.org/2000/svg"
 fill="none"
 viewBox="0 0 24 24"
 stroke-width="1.5"
-stroke="white"
-width="60">
-
+stroke="white">
 <path stroke-linecap="round"
 stroke-linejoin="round"
 d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-
 </svg>
-
 </a>
-
-</div>
-
 
 </body>
 </html>
