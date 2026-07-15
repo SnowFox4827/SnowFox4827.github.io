@@ -1,365 +1,539 @@
-/* =========================
-   BASE
-========================= */
+/* =========================================================
+   TOKENS
+   Palette: dusk pine forest with a warm trail-blaze ember accent.
+   Type: Fraunces (display, characterful serif) + Inter (body)
+         + JetBrains Mono (dates / tags — field-notes feel)
+========================================================= */
 
 :root {
-  --forest: #2f4f3e;
-  --pine: #1f3328;
-  --moss: #7c8f4a;
-  --bark: #5a4632;
-  --stone: #1e1e1c;
-  --ash: #c2c2b8;
+  --pine-deep: #101d16;
+  --forest: #1c2f22;
+  --moss: #8a9b5e;
+  --moss-bright: #a8bc78;
+  --bark: #6b4f36;
+  --parchment: #e9e6da;
+  --parchment-dim: #b7b8ab;
+  --ember: #c17a4f;
+  --ember-bright: #d6905f;
+  --line: #3a4536;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+
+  --max-width: 1080px;
+  --radius: 6px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #111;
-  color: var(--ash);
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--pine-deep);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(138, 155, 94, 0.08), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(193, 122, 79, 0.06), transparent 40%);
+  color: var(--parchment-dim);
+  line-height: 1.6;
 }
 
-/* =========================
-   NAVIGATION BAR
-========================= */
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+section {
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--line);
+}
+
+section:first-of-type {
+  border-top: none;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--parchment);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-4);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--line), transparent);
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(16, 29, 22, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
 
 #home {
-  background: linear-gradient(180deg, var(--pine), var(--forest));
-  padding-top: 2cm;
-  padding-bottom: 2cm;
-  margin: -1cm;
-  height: 5mm;
-  border-bottom: 4px solid var(--bark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-2) var(--space-3);
+}
+
+.profile_name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--parchment);
+}
+
+.contact_info {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: 4px;
+}
+
+.contact_info a {
+  display: inline-flex;
+  color: var(--parchment-dim);
+  transition: color 0.15s ease;
+}
+
+.contact_info a:hover,
+.contact_info a:focus-visible {
+  color: var(--ember-bright);
+}
+
+.contact_info svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--parchment);
+  padding: 8px 10px;
+  cursor: pointer;
 }
 
 .topdiv {
-  float: right;
-  padding-right: 1cm;
+  display: flex;
+  gap: var(--space-1);
 }
 
 .topmenu {
-  color: #cfd6c8;
-  margin: 10px;
-  padding: 20px;
-  font-size: 18px;
-  letter-spacing: 1.5px;
+  color: var(--parchment-dim);
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
+  border-radius: var(--radius);
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.topmenu:hover {
-  color: #ffffff;
-  border-bottom: 2px solid var(--moss);
+.topmenu:hover,
+.topmenu:focus-visible {
+  color: var(--parchment);
+  background-color: rgba(138, 155, 94, 0.12);
 }
 
-/* =========================
-   PROFILE / IDENTITY
-========================= */
-
-.profile_name {
-  float: left;
-  padding-left: 2cm;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #f5f5f0;
+.topmenu.active {
+  color: var(--moss-bright);
 }
 
-.profile_name .contact_info {
-  font-size: 14px;
-  color: #a9b3a2;
-  display: flex;
-  align-items: center;
-}
-
-.contact_info img {
-  width: 22px;
-  margin-right: 10px;
-}
-
-/* =========================
-   TITLES & INTRO
-========================= */
-
-h2 {
-  font-size: 46px;
-  text-align: center;
-  color: var(--moss);
-  margin: 40px 0 0 60px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.introduction {
-  font-size: 28px;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-/* =========================
-   LAYOUT
-========================= */
-
-.container {
-  display: flex;
-}
-
-/* =========================
+/* =========================================================
    ABOUT ME
-========================= */
+========================================================= */
 
-.about-me {
-  display: flex;
+#about-me .section-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
   align-items: center;
 }
 
-#about-me h1 {
-  font-size: 60px;
-  color: #f0f0eb;
-  letter-spacing: 3px;
-  margin-top: 90px;
-}
-
-#about-me p {
-  font-size: 22px;
-  color: var(--ash);
-  margin-top: -1cm;
-}
-
-.profile_image {
-  width: 200px;
-  margin: 40px;
-  margin-top: 2cm;
-}
-
-/* =========================
-   SKILLS
-========================= */
-
-.all_skills {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.skill {
-  background-color: var(--stone);
-  border: 1px solid #3a3a36;
-  border-left: 5px solid var(--moss);
-  border-radius: 4px;
-  text-align: center;
-  margin: 40px;
-  padding: 20px;
-  width: 2in;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.03),
-    0 6px 16px rgba(0,0,0,0.7);
-  transition: transform 0.2s ease;
-}
-
-.skill:hover {
-  transform: translateY(-5px);
-  border-left-color: #a3b86c;
-}
-
-.skill img {
-  height: 35px;
-}
-
-.skills h6 {
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 10px 0 5px;
-}
-
-.skills p {
-  font-size: 14px;
-  color: #b8b8ad;
-  margin: 5px 0;
-}
-
-.flex_center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* =========================
-   PROJECTS
-========================= */
-
-.projects-container {
-  margin-top: 30px;
-  margin-left: 60px;
-}
-
-.projects-container hr {
-  height: 1px;
-  border: none;
-  background: linear-gradient(to right, transparent, #4a4a44, transparent);
-  width: 75%;
-  margin-left: 5cm;
-}
-
-.project-card {
-  margin: 0 15px 15px 30px;
-}
-
-.project-card h3 {
-  font-size: 24px;
-  color: #e6e6df;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.project-card li {
-  font-size: 18px;
-  color: #b8b8ad;
-}
-
-/* =========================
-   WORK EXPERIENCE
-========================= */
-
-.work-experience-container {
-  margin-top: 30px;
-  margin-left: 60px;
-}
-
-.work-experience-container hr {
-  height: 1px;
-  border: none;
-  background: linear-gradient(to right, transparent, #4a4a44, transparent);
-  width: 75%;
-  margin-left: 5cm;
-}
-
-.work-experience-card {
-  margin: 0 15px 15px 30px;
-}
-
-.work-experience-card h3 {
-  font-size: 24px;
-  color: #e6e6df;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.work-experience-card li {
-  font-size: 18px;
-  color: #b8b8ad;
-}
-
-/* =========================
-   EDUCATION
-========================= */
-
-.education-container {
-  margin-top: 30px;
-  margin-left: 60px;
-}
-
-.education-container hr {
-  height: 1px;
-  border: none;
-  background: linear-gradient(to right, transparent, #4a4a44, transparent);
-  width: 75%;
-  margin-left: 5cm;
-}
-
-.education-card {
-  margin: 0 15px 15px 30px;
-}
-
-.education-card h3 {
-  font-size: 24px;
-  color: #e6e6df;
-}
-
-.education-card li {
-  font-size: 18px;
-  color: #b8b8ad;
-}
-
-/* =========================
-   MINISTRY EXPERIENCE
-========================= */
-
-.ministry-experience-container {
-  margin-top: 30px;
-  margin-left: 60px;
-}
-
-.ministry-experience-container hr {
-  height: 1px;
-  border: none;
-  background: linear-gradient(to right, transparent, #4a4a44, transparent);
-  width: 75%;
-  margin-left: 5cm;
-}
-
-.ministry-experience-card {
-  margin: 0 15px 15px 30px;
-}
-
-.ministry-experience-card h3 {
-  font-size: 24px;
-  color: #e6e6df;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.ministry-experience-card li {
-  font-size: 18px;
-  color: #b8b8ad;
-}
-
-
-/* =========================
-   Professional Development
-========================= */
-
-.professional-development-container {
-  margin-top: 30px;
-  margin-left: 60px;
-}
-
-.professional-development-container hr {
-  height: 1px;
-  border: none;
-  background: linear-gradient(to right, transparent, #4a4a44, transparent);
-  width: 75%;
-  margin-left: 5cm;
-}
-
-.professional-development-card {
-  margin: 0 15px 15px 30px;
-}
-
-.professional-development-card h3 {
-  font-size: 24px;
-  color: #e6e6df;
-}
-
-.professional-development-card li {
-  font-size: 18px;
-  color: #b8b8ad;
-}
-
-/* =========================
-   SCROLL TO TOP
-========================= */
-
-.iconbutton {
-  width: 48px;
-  height: 48px;
-  border-radius: 100%;
-  background-color: var(--stone);
+.profile_image_wrap {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--forest), var(--pine-deep));
   border: 2px solid var(--moss);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile_image {
+  width: 72px;
+  filter: invert(88%) sepia(8%) saturate(400%) hue-rotate(50deg);
+}
+
+#about-me h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--parchment);
+  margin: 0 0 var(--space-2);
+}
+
+#about-me p {
+  font-size: 1.05rem;
+  color: var(--parchment-dim);
+  max-width: 68ch;
+}
+
+#about-me p + p {
+  margin-top: var(--space-2);
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-group {
+  margin-bottom: var(--space-4);
+}
+
+.skills-group:last-child {
+  margin-bottom: 0;
+}
+
+.skills-group h3 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--moss-bright);
+  margin: 0 0 var(--space-2);
+}
+
+.all_skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-2);
+}
+
+.skill {
+  background-color: var(--forest);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--moss);
+  border-radius: var(--radius);
+  text-align: left;
+  padding: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: transform 0.15s ease, border-left-color 0.15s ease;
+}
+
+.skill:hover {
+  transform: translateY(-3px);
+  border-left-color: var(--ember);
+}
+
+.skill img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.skill-text h6 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--parchment);
+  margin: 0;
+}
+
+.skill-text p {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--parchment-dim);
+  margin: 2px 0 0;
+}
+
+/* =========================================================
+   CARD GRIDS (projects, education)
+========================================================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.project-card,
+.education-card {
+  background-color: var(--forest);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+}
+
+.project-card h3,
+.education-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--parchment);
+  margin: 0 0 4px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.education-card h4 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--moss-bright);
+  letter-spacing: 0.03em;
+  margin: 0 0 var(--space-2);
+}
+
+.project-card ul,
+.education-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.project-card li,
+.education-card li {
+  font-size: 0.95rem;
+  color: var(--parchment-dim);
+  margin-bottom: 4px;
+}
+
+/* =========================================================
+   TRAIL TIMELINE
+   Signature element: experience entries read like blazes
+   marking a trail — a dashed line with diamond markers,
+   echoing the hiking icon and outdoor-craft skills above.
+========================================================= */
+
+.trail {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.trail::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background-image: linear-gradient(var(--line) 60%, transparent 0%);
+  background-size: 1px 10px;
+  background-repeat: repeat-y;
+}
+
+.trail-entry {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.trail-entry:last-child {
+  margin-bottom: 0;
+}
+
+.trail-entry::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-4) + 1px);
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  background-color: var(--ember);
+  border: 2px solid var(--pine-deep);
+  transform: rotate(45deg);
+}
+
+.trail-entry h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--parchment);
+  margin: 0 0 2px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.trail-entry h4 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--moss-bright);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-2);
+  font-weight: 400;
+}
+
+.trail-entry ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.trail-entry li {
+  font-size: 0.95rem;
+  color: var(--parchment-dim);
+  margin-bottom: 4px;
+}
+
+.trail-group {
+  margin-bottom: var(--space-4);
+}
+
+.trail-group:last-child {
+  margin-bottom: 0;
+}
+
+.trail-group > h3.trail-org {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--moss-bright);
+  margin: 0 0 var(--space-2);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* =========================================================
+   SCROLL TO TOP
+========================================================= */
+
+.iconbutton {
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  background-color: var(--forest);
+  border: 1px solid var(--moss);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  right: 3%;
-  bottom: 3%;
-  cursor: pointer;
+  right: 24px;
+  bottom: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.iconbutton:hover {
+  transform: translateY(-3px);
+  border-color: var(--ember);
+}
+
+.iconbutton svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  text-align: center;
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--parchment-dim);
+  border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ember-bright);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 860px) {
+  .topdiv {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--pine-deep);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: var(--space-2);
+    display: none;
+  }
+
+  .topdiv.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  #about-me .section-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .profile_name {
+    font-size: 1.15rem;
+  }
 }
